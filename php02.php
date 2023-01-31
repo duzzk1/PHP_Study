@@ -12,9 +12,9 @@
     $nome = "";
     if (isset($_POST["enviar"])){
       $nome = $_POST["name"];
-      $email = [$_POST["email"]];
+      $email = $_POST["email"];
       $password = $_POST["password"];
-      
+     
     };
   ?>
   
@@ -23,15 +23,28 @@
     <label for="name">Nome</label>
     <input type="text" id="name" name="name">
     <label for="email">Email</label>
-    <input type="text" id="email" name="email">
+    <input type="email" id="email" name="email">
     <label for="password">Senha</label>
     <input type="password" id="password" name="password">
     <input type="submit" value="Enviar" id="enviar" name="enviar">
   </form>
   </div>
-  <h1>
-     <?php echo "O nome inserido foi: $nome";   echo "<br/>";    print_r ($email);
-?>
-  </h1>
+  <div id="para">
+  <p>
+     <?php 
+     echo "O nome inserido foi: $nome"; 
+     ?>
+  </p>
+  <p>
+    <?php 
+     echo "O Email inserido foi: $email";
+    ?>
+  </p>
+  <p>
+    <?php 
+     echo "A senha inserida foi: <span class='spans'>$password</span>";
+    ?>
+  </p>
+  </div>
 </body>
 </html>

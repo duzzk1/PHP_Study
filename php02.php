@@ -10,15 +10,31 @@
 <body>
   <?php 
     $nome = "";
+    $email = "";
+    $password = "";
     if (isset($_POST["enviar"])){
+      if ($_POST["name"] !== ""){
       $nome = $_POST["name"];
-      $email = $_POST["email"];
-      $password = $_POST["password"];
+      }else {
+        $nome = "DIGITE UM NOME!";
+      };
+      if ($_POST["email"] !== ""){
+        $email = $_POST["email"];
+        }else{
+          $email = "DIGITE UM EMAIL!";
+        };
+        if ($_POST["password"] !== ""){
+          $password = $_POST["password"];
+          }else{
+            $password = "DIGITE UMA SENHA!";
+          };
+      
      
     };
   ?>
-  
+  <h1>Formulário de aprendizado PHP</h1>
   <div>
+  
   <form method="post">
     <label for="name">Nome</label>
     <input type="text" id="name" name="name">
